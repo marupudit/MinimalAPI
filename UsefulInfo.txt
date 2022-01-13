@@ -1,0 +1,13 @@
+Mssql server:
+docker run --rm -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Password%1#29" -p1433:1433 --name sqlserver -h sqlserver -it mcr.microsoft.com/mssql/server:latest
+
+
+Entity Framework:
+'dotnet ef' - to check the if its installed
+
+'dotnet ef database update' -- it will read the models and DB context and create the DB for us on DB server.
+
+'dotnet  ef migrations add initialDb' - To add the scripts that creates initial DB in VS under migrations folder.
+
+And finally update 'dotnet ef database update' once again to apply the changes from migration scripts
+
